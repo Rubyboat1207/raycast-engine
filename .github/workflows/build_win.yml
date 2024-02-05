@@ -23,3 +23,11 @@ jobs:
     - name: Build Cwolf.vcxproj
       run: |
         msbuild Cwolf.vcxproj /p:Configuration=Debug /p:Platform=Win32
+
+    - name: Upload Build Artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: build-artifacts
+        path: |
+          Debug/Cwolf.exe
+          Debug/SDL2.dll
