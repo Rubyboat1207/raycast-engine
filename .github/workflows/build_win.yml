@@ -1,0 +1,24 @@
+name: MSVC Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up MSVC
+      uses: ilammy/msvc-dev-cmd@v1
+
+    - name: Download SDL2
+      run: .\download-sdl.bat
+
+    - name: Build Cwolf.vcxproj
+      run: |
+        msbuild Cwolf.vcxproj /p:Configuration=Debug /p:Platform=Win32

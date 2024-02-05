@@ -71,8 +71,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>C:\Users\rudy\source\repos\Cwolf\Cwolf\SDL2-2.30.0\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\rudy\source\repos\Cwolf\Cwolf\SDL2-2.30.0\lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>SDL2-2.30.0\include;$(IncludePath)</IncludePath>
+    <LibraryPath>SDL2-2.30.0\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -139,6 +139,11 @@
     <ClInclude Include="libs.h" />
     <ClInclude Include="vec.h" />
     <ClInclude Include="walls.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="SDL2-2.30.0\lib\x86\SDL2.dll">
+      <FileType>Document</FileType>
+    </CopyFileToFolders>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
